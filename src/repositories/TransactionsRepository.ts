@@ -20,15 +20,14 @@ class TransactionsRepository {
   }
 
   public all(): Transaction[] {
-    return this.transactions;
+    const result = this.transactions;
+    return result;
   }
 
   // eslint-disable-next-line class-methods-use-this
-  // public getBalance(income: number, outcome: number, total: number): Balance {
-  //   // total = income - outcome;
-  //   // const balance: number = total;
-  //   // return balance;
-  // }
+  public getBalance({income, outcome, total}:Balance)  {
+
+  }
 
   public create({ title, value, type }: CreateTransactionDTO): Transaction {
     const transaction = new Transaction({ title, value, type });
